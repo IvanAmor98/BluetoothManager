@@ -26,9 +26,7 @@ public class PairingReceiver extends BroadcastReceiver {
                 byte[] pinBytes = (""+pin).getBytes("UTF-8");
                 device.setPin(pinBytes);
                 //setPairing confirmation if neeeded
-                if (device.setPairingConfirmation(true)) {
-                    main.updateBondedDevices();
-                }
+                device.setPairingConfirmation(true);
             } catch (Exception e) {
                 e.printStackTrace();
             }
