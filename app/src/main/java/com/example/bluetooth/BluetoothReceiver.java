@@ -33,6 +33,9 @@ public class BluetoothReceiver extends BroadcastReceiver {
                     main.adapterAvailableDevices.notifyDataSetChanged();
                 }
                 break;
+            case BluetoothDevice.ACTION_BOND_STATE_CHANGED:
+                main.updateBondedDevices();
+                break;
         }
     }
 

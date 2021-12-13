@@ -220,6 +220,9 @@ public class MainActivity extends AppCompatActivity {
     public void updateBondedDevices() {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         setPairedDevices = bluetoothAdapter.getBondedDevices();
+        deviceNames.clear();
+        deviceAddresses.clear();
+
         if (setPairedDevices.size() > 0) {
             for (BluetoothDevice device : setPairedDevices) {
                 Log.d("Device", device.getName());
